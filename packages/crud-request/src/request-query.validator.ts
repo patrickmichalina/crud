@@ -7,7 +7,7 @@ import {
   isStringFull,
   isUndefined,
   objKeys,
-} from '@nestjsx/util';
+} from 'nestjsx-tmp-util';
 
 import { RequestQueryException } from './exceptions';
 import { CustomOperators, ParamOption, ParamsOptions } from './interfaces';

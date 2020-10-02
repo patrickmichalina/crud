@@ -8,7 +8,7 @@ import {
   JoinOption,
   JoinOptions,
   QueryOptions,
-} from '@nestjsx/crud';
+} from 'nestjsx-tmp-crud';
 import {
   ComparisonOperator,
   ParsedRequestParams,
@@ -17,7 +17,7 @@ import {
   QuerySort,
   SCondition,
   SConditionKey,
-} from '@nestjsx/crud-request';
+} from 'nestjsx-tmp-crud-request';
 import {
   hasLength,
   isArrayFull,
@@ -26,7 +26,7 @@ import {
   isObject,
   isUndefined,
   objKeys,
-} from '@nestjsx/util';
+} from 'nestjsx-tmp-util';
 import { oO } from '@zmotivat0r/o0';
 import { plainToClass } from 'class-transformer';
 import { ClassType } from 'class-transformer/ClassTransformer';
@@ -1079,7 +1079,7 @@ export class TypeOrmCrudService<T> extends CrudService<T> {
           if (customOperator.isArray) {
             this.checkFilterIsArray(cond);
           }
-          str = customOperator.query(field, param);
+          str = customOperator.query(field, param, cond.value);
           params = customOperator.params;
         } catch (error) {
           this.throwBadRequestException(`Invalid custom operator '${field}' query`);

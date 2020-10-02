@@ -5,7 +5,7 @@ import {
   isObject,
   isString,
   isUndefined,
-} from '@nestjsx/util';
+} from 'nestjsx-tmp-util';
 import { stringify } from 'qs';
 
 import {
